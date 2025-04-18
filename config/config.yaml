@@ -1,0 +1,16 @@
+model:
+  name: "facebook/bart-large-cnn"
+  max_input_length: 1024
+  max_output_length: 150
+  min_output_length: 30
+  num_beams: 4
+  length_penalty: 2.0
+  no_repeat_ngram_size: 3
+data:
+  dataset: "cnn_dailymail"
+  subset: "3.0.0"
+  text_column: "article"
+  summary_column: "highlights"
+  max_samples: 1000
+evaluation:
+  metrics: ["rouge1", "rouge2", "rougeL"]
